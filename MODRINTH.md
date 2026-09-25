@@ -60,13 +60,14 @@ in the output.
 
 ## Languages
 
-Chat and menus ship in **English, Russian, Ukrainian, German and Spanish**.
-Pick one with `language:` in `config.yml`. The files live in `lang/` and are
-yours to edit — updates never overwrite them. Adding a language is copying a
-file and translating it.
+**English and Russian** are complete — every message, every menu, every
+command. **Ukrainian, German and Spanish** cover what a player sees and fall
+back to English on the administration screens.
 
-*(Administration menus are still Russian-only; translating them is in
-progress.)*
+Pick one with `language:` in `config.yml`. The files live in `lang/` and are
+yours to edit; updates never overwrite them. Adding a language, or finishing
+one of the three, is copying a file and translating the lines you care about —
+anything left out falls back to English.
 
 ## Verification
 

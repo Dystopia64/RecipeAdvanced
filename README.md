@@ -62,13 +62,16 @@ in the output.
 
 ### Languages
 
-Chat messages ship in English, Russian, Ukrainian, German and Spanish. Pick
-one with `language: en` in `config.yml`. The files live in `lang/` inside the
-plugin folder and are yours to edit — an update never overwrites them. To add
-a language, copy one of them to `lang/<code>.yml`, translate it and point
-`language` at it.
+**English and Russian** are complete: every message, every menu, every command.
+**Ukrainian, German and Spanish** cover what a player sees — the crafting
+windows, the recipe tree, the cauldron, station names — and fall back to
+English for the administration screens.
 
-Menu text is currently Russian; translating it is in progress.
+Pick one with `language: en` in `config.yml`. The files live in `lang/` inside
+the plugin folder and are yours to edit; an update never overwrites them. To
+add a language, or to finish one of the three, copy a file to
+`lang/<code>.yml`, translate the lines you care about and point `language` at
+it. Anything you leave out falls back to English rather than breaking.
 
 ### Verification
 
