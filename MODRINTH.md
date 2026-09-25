@@ -131,6 +131,25 @@ end to end.
 
 ---
 
+## Coming from another recipe plugin
+
+If you are moving from a recipe plugin you already know, the parts that
+usually matter map like this:
+
+| What you are looking for | Here |
+|---|---|
+| recipes built in game, not in YAML | `/ra editor` |
+| oversized crafting grids | 4x4, 5x5, 6x6 — full edition |
+| furnace cook time and experience | on the conditions page of the editor |
+| carrying enchantments over on the anvil | a result-processing step |
+| a cauldron that actually brews | fluid level, heat, timer, floating result |
+| recipes split into files | one file per recipe, in folders |
+| items from CraftEngine and friends | as ingredients and as results |
+| disabling a vanilla recipe | `/ra editor` → vanilla recipes |
+
+What is deliberately not here: scripting, quests, item generators. This is a
+crafting plugin.
+
 ## Terms
 
 Free to use on any number of servers, commercial ones included, with no time
