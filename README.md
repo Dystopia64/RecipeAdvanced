@@ -31,7 +31,9 @@ server recipes and work in the ordinary vanilla window.
 
 ### Custom workbenches on blocks
 
-Bind any block to its own crafting menu.
+Bind any block to its own crafting menu, with its own recipes, particles and
+permissions. Stations already written keep working in the free version —
+*building* one needs the full version.
 
 ### One recipe, one file
 
@@ -100,7 +102,13 @@ Permissions:
 |---|---|
 | `/ra editor` | recipe editor |
 | `/ra save <folder> <recipe>` | move a recipe into a folder |
+| `/ra ext list` | every other plugin's recipes found on the server |
+| `/ra ext add <namespace> [folder]` | publish one section into `/recipes` |
+| `/ra ext all [folder]` | publish all of them at once |
+| `/ra ext folder <namespace> <folder>` | move a whole section |
+| `/ra ext remove <namespace>` | take a section back out |
 | `/ra verify` | check every recipe |
+| `/ra lang` | active language, lines loaded, anything unreadable |
 | `/ra reload` | reload the configuration |
 | `/recipes` | tree of every recipe on the server |
 
@@ -108,14 +116,18 @@ Permissions:
 
 ## Full version
 
-Two things are missing from the free version:
+Three things need the full version:
 
-- multiblock stations built out of blocks, with their own menu, holograms and
-  particles;
-- the 4x4, 5x5 and 6x6 workbenches.
+- **multiblock stations** built out of blocks, with their own menu, holograms
+  and particles;
+- **the 4x4, 5x5 and 6x6 workbenches**;
+- **building a station of your own** — a block with its own crafting menu.
+  Stations written earlier keep working in the free version: they load, they
+  open for players, their items can still be handed out. Creating or editing
+  one is what needs the full version.
 
-That code is not in the free jar at all: the classes are not shipped, so there
-is no flag to flip.
+The first two are not in the free jar at all — the classes are not shipped, so
+there is no flag to flip.
 
 ---
 

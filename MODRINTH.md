@@ -33,13 +33,25 @@ vanilla window. Not a chest menu pretending to be a furnace — the furnace.
 ## Custom workbenches
 
 Bind any block to its own crafting menu, with its own recipes, particles and
-permissions.
+permissions. Stations already written keep working in the free version;
+building one needs the full version.
 
 ## `/recipes` — one tree for the whole server
 
 Your recipes and other plugins' in a single list with folders. From a recipe
 you can walk into the recipe of its ingredient: you see an enchanted sword,
 click the ingot, and find out where the ingot comes from.
+
+Nothing from another plugin shows up until you publish it, and it lands in the
+folder you name:
+
+```
+/ra ext list                       what other plugins registered
+/ra ext add <namespace> [folder]   publish one section
+/ra ext all [folder]               publish all of them
+/ra ext folder <namespace> <path>  move a whole section
+/ra ext remove <namespace>         take it back out
+```
 
 ## Items from other plugins
 
@@ -102,12 +114,16 @@ Drop the jar into `plugins/` and restart. That is all.
 This is the **free edition**, and it is free for any server, commercial ones
 included.
 
-Two things are only in the full edition:
+Three things are only in the full edition:
 
 - **multiblock stations** — build a structure out of blocks, click it, and get
   your own crafting menu, with holograms, particles, and placement that works
   at any rotation;
-- **the 4x4, 5x5 and 6x6 workbenches**.
+- **the 4x4, 5x5 and 6x6 workbenches**;
+- **building a station of your own** — a block with its own crafting menu,
+  particles and permissions. Stations written earlier keep working here: they
+  load, they open for players, their items can still be handed out. Creating
+  or editing one is what needs the full edition.
 
 That code is not in this jar at all. The classes are not shipped, so there is
 no flag to flip and nothing to unlock — what you download is the free edition
