@@ -1,8 +1,21 @@
-# RecipeAdvanced 1.0.3 — free edition
+# RecipeAdvanced 1.0.4 — free edition
 
 A crafting plugin for Paper. Java 21, exactly one dependency — `paper-api`.
 
+This release follows 1.0.2 directly; 1.0.3 was built but never published, so
+everything written for it is here.
+
 ## Added
+
+**A recipe that makes several things now looks like one.** In the recipe list
+every entry is a single item, so a craft that hands out three read as a craft
+that hands out one. Such an entry now cycles through its outputs — each in
+turn, about one a second — and spells all of them out in its tooltip. The same
+list appears on the result in the station window before you click, and in the
+cauldron.
+
+**The recipe page shows every output.** The extras sit beside the main result
+instead of being made silently and mentioned nowhere.
 
 **A station can answer to an item from another plugin.** A workbench built on a
 CraftEngine item did nothing when the player crafted that item and placed it:
@@ -23,9 +36,6 @@ the strict behaviour for shapes where facing is the point.
 
 ## Fixed
 
-- **A recipe with several outputs showed only the first.** The rest were made
-  and handed over, but appeared nowhere in the recipe view. They are drawn
-  under the main result now.
 - **An item that comes out second was a dead end.** Walking from an item to the
   recipe that makes it only looked at the main result, so a secondary output
   reported "no recipe — obtained another way" while the recipe sat two slots
