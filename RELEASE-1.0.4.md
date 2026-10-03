@@ -7,15 +7,16 @@ everything written for it is here.
 
 ## Added
 
-**A recipe that makes several things now looks like one.** In the recipe list
-every entry is a single item, so a craft that hands out three read as a craft
-that hands out one. Such an entry now cycles through its outputs — each in
-turn, about one a second — and spells all of them out in its tooltip. The same
-list appears on the result in the station window before you click, and in the
-cauldron.
+**A recipe that makes several things now looks like one.** In a recipe list
+every tile is a single item, so a craft that hands out three read as a craft
+that hands out one. Such a tile now cycles through its outputs — each in turn,
+about one a second — and spells all of them out in its tooltip. This holds in
+both lists: `/recipeadvanced` and the `/recipes` tree. The same list appears on
+the result in the station window before you click, and in the cauldron.
 
-**The recipe page shows every output.** The extras sit beside the main result
-instead of being made silently and mentioned nowhere.
+**A recipe page shows every output.** The extras sit beside the main result
+instead of being made silently and mentioned nowhere. Again in both: this
+plugin's own recipe view and the tree's schematic.
 
 **A station can answer to an item from another plugin.** A workbench built on a
 CraftEngine item did nothing when the player crafted that item and placed it:
@@ -36,6 +37,13 @@ the strict behaviour for shapes where facing is the point.
 
 ## Fixed
 
+- **The `/recipes` tree was ordered by registry key.** That key is the name
+  the owning plugin files a recipe under, and for an armour set it usually
+  starts with the piece — `boots_ruby`, `boots_sapphire` — so the page came out
+  as every pair of boots, then every helmet, with the sets shuffled through
+  each other. It is sorted by the name on the item now, which keeps a set
+  together. This plugin's own recipes were also appended after the sorted
+  foreign ones instead of among them, and so always trailed the page.
 - **An item that comes out second was a dead end.** Walking from an item to the
   recipe that makes it only looked at the main result, so a secondary output
   reported "no recipe — obtained another way" while the recipe sat two slots
