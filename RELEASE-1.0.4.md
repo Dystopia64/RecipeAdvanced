@@ -44,6 +44,11 @@ the strict behaviour for shapes where facing is the point.
   each other. It is sorted by the name on the item now, which keeps a set
   together. This plugin's own recipes were also appended after the sorted
   foreign ones instead of among them, and so always trailed the page.
+- **A cauldron of lava burned what it brewed.** The result is spawned inside
+  the block it came out of, which for a lava cauldron means inside the lava: it
+  took fire damage on its first tick and was gone before it had risen out of
+  the pot. The experience orb went the same way. Both are left alone now until
+  someone picks them up.
 - **An item that comes out second was a dead end.** Walking from an item to the
   recipe that makes it only looked at the main result, so a secondary output
   reported "no recipe — obtained another way" while the recipe sat two slots
