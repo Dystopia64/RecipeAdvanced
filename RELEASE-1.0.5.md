@@ -65,15 +65,18 @@ the strict behaviour for shapes where facing is the point.
   the block it came out of, which for a lava cauldron means inside the lava:
   it took fire damage on its first tick and was gone before it had risen out
   of the pot. The experience orb went the same way.
-- **The `/recipes` tree was ordered by registry key.** That key is the name
-  the owning plugin files a recipe under, and for an armour set it usually
-  starts with the piece — `boots_ruby`, `boots_sapphire` — so the page came
-  out as every pair of boots, then every helmet, with the sets shuffled
-  through each other. It is sorted by the name on the item now, from its first
-  letter, which keeps a set together even when a resource pack starts the name
-  with a glyph of its own. This plugin's own recipes were also appended after
-  the sorted foreign ones instead of among them, and so always trailed the
-  page.
+- **The `/recipes` tree scattered armour sets.** Everything was ordered by
+  registry key, which for another plugin's set usually starts with the piece —
+  `boots_ruby`, `boots_sapphire` — so the page came out as every pair of
+  boots, then every helmet, with the sets shuffled through each other. Foreign
+  recipes are ordered by the name on the item now, which keeps a set together,
+  and from its first letter, so a resource pack's leading glyph no longer
+  separates an item from its own set. This plugin's own recipes are ordered by
+  their id instead: an admin groups their recipes by naming them
+  `hunter_helmet`, `hunter_boots`, and that grouping lives in the id — it
+  rarely survives into the name on the tile, which may be a plain vanilla one
+  or may put the set word last. Our recipes were also appended after the
+  sorted foreign ones rather than among them, and so always trailed the page.
 - **An item that comes out second was a dead end.** Walking from an item to
   the recipe that makes it only looked at the main result, so a secondary
   output reported "no recipe — obtained another way" while the recipe sat two
