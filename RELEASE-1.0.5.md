@@ -53,6 +53,18 @@ the strict behaviour for shapes where facing is the point.
 
 ## Fixed
 
+- **Saving a recipe stalled the server.** Pressing save in the editor rebuilt
+  the whole vanilla registry: every recipe the plugin owns taken out of the
+  server and put back, to publish a change to one of them. The server runs its
+  own `finalizeRecipeLoading` inside every `addRecipe`, rebuilding ingredient
+  tables and reloading advancement data for every player online, so the real
+  cost was one full reload per recipe on the list — a server with sixty of
+  them dropped to 17 TPS on every save. Only the saved recipe is re-registered
+  now, so a save costs the same whether the server has five recipes or five
+  hundred.
+- **A deleted recipe stayed craftable.** It vanished from the plugin's list
+  and from disk, but the copy the server had been given was never taken back,
+  so it kept working at the furnace or the smithing table until a restart.
 - **A vanilla ingredient was a dead end.** Clicking an iron ingot in a recipe
   said it had no recipe — a strange thing for a recipe book to say. The
   lookup only searched this plugin's own recipes and the ones other plugins
