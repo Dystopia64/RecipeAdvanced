@@ -25,8 +25,15 @@ station is the thing a player has to go and find.
 **A cauldron recipe is drawn as a cauldron.** It used to be six slots floating
 in an empty window: nothing said which pot, how full it had to be, or over
 what fire, all of which the recipe already knows and the player has to match
-before anything cooks. The recipe page and the editor now carry the pot's own
-gauge, fluid and fire, in the places the cauldron menu puts them.
+before anything cooks. Every page that shows a cauldron recipe — this plugin's
+own, the `/recipes` tree, and the editor — now carries the pot's own gauge,
+fluid and fire, arranged as the cauldron menu arranges them. The block sits
+one row higher there, because the bottom row of those windows is buttons.
+
+**A recipe of ours is drawn in its station's own slots.** The `/recipes` tree
+describes a foreign recipe as rows of ingredients, which is all the Bukkit API
+gives it. Ours were shown the same way, so a cauldron lost its funnel shape
+and, with rows capped at five, its sixth ingredient outright.
 
 **A station can answer to an item from another plugin.** A workbench built on
 a CraftEngine item did nothing when the player crafted that item and placed
