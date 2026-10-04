@@ -35,8 +35,17 @@ following a plan. Only the kind of block matters now; the station's own
 rotation and mirroring still work as before. A toggle in the builder restores
 the strict behaviour for shapes where facing is the point.
 
+**A cauldron recipe is drawn as a cauldron.** It used to be six slots floating
+in an empty window: nothing said which pot, how full it had to be, or over
+what fire, all of which the recipe already knows and the player has to match
+before anything cooks. The recipe page and the editor now carry the pot's own
+gauge, fluid and fire, in the places the cauldron menu puts them.
+
 ## Fixed
 
+- **A craft announced itself by its id.** «Crafted s_knife» — the id is a key,
+  not a name, and a recipe nobody renamed had nothing else to say. It is
+  announced as the thing it made instead.
 - **The `/recipes` tree was ordered by registry key.** That key is the name
   the owning plugin files a recipe under, and for an armour set it usually
   starts with the piece — `boots_ruby`, `boots_sapphire` — so the page came out
