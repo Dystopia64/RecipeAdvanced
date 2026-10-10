@@ -1,9 +1,13 @@
-# RecipeAdvanced 1.0.5 — free edition
+# RecipeAdvanced 1.0.6 — free edition
 
 A crafting plugin for Paper. Java 21, exactly one dependency — `paper-api`.
 
-This release follows 1.0.2 directly. 1.0.3 and 1.0.4 were built but never
-published, so everything written for them is here.
+This release follows 1.0.2 directly. 1.0.3 to 1.0.5 were built but never
+published, so everything written for them is here too.
+
+The three it exists for: saving a recipe no longer stalls the server, the
+recipe tree is ordered so an armour set stays together, and a recipe switched
+off by an admin stays off across a restart.
 
 ## Added
 
@@ -62,6 +66,14 @@ the strict behaviour for shapes where facing is the point.
   them dropped to 17 TPS on every save. Only the saved recipe is re-registered
   now, so a save costs the same whether the server has five recipes or five
   hundred.
+- **A recipe switched off by an admin came back on every restart.** The
+  removals were made while plugins were enabling and did not last: another
+  plugin finishes its own startup a few seconds later, rebuilds the recipe
+  registry from the data packs, and takes every disabled recipe back out of
+  the bin with it. Measured on a server with CraftEngine — gone at enable,
+  still gone when the server announced it was ready, back half a minute after
+  that — and only `/ra reload`, run late enough, made it stick. The removals
+  are now re-asserted if anything undoes them, so no reload is needed.
 - **A deleted recipe stayed craftable.** It vanished from the plugin's list
   and from disk, but the copy the server had been given was never taken back,
   so it kept working at the furnace or the smithing table until a restart.
